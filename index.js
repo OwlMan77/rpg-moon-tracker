@@ -26,7 +26,7 @@ const setDays = (days) => {
 const getDays = () => {
     const days = localStorage.getItem('days')
     
-    if (days === null || days === NaN) {
+    if (days === null || isNaN(parseInt(days, 10))) {
         localStorage.setItem('days', '0')
         return 0;
     }
@@ -80,16 +80,22 @@ const updateMoon = (days) => {
 }
 
 const onPositiveButtonPress = () => {
-    days = days + daysIncrement
+    if(!isNaN(daysIncrement) || daysIncrement) {
+        days = days + daysIncrement
+    }
+
     updateMoon(days)
 }
 
 const onNegativeButtonPress = () => {
-    if (days - daysIncrement < 0) {
-        days = 0
-    } else {
-        days = days - daysIncrement
+    if(!isNaN(daysIncrement) || daysIncrement) {
+        if (days - daysIncrement < 0) {
+            days = 0
+        } else {
+            days = days - daysIncrement
+        }
     }
+
     updateMoon(days)
 }
 
