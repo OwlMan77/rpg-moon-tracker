@@ -45,20 +45,19 @@ const setMoonStyle = (days) => {
     const percentage = getPhasePercentage(days);
 
     let stylePosition;
-    console.log(percentage);
 
     if (percentage < 60) {
-       stylePosition = `${percentage / 62.5 * -500}`
+       stylePosition = `${(1 - (percentage / 62.5)) * -500}`
     }
 
     if (percentage === 60) {
-        stylePosition = `500`
+        stylePosition = `0`
     }
     
     if (percentage > 60) {
-       stylePosition = `${500 - ((percentage - 62.5) /  37.5) * 500}`
+       stylePosition = `${500 - (1 - ((percentage - 62.5) /  37.5)) * 500}`
     }
-    document.getElementsByClassName('moon')[0].style.boxShadow = `inset ${stylePosition}px 0px #999, inset ${stylePosition}px 0px 1px 1px #999`
+    document.getElementsByClassName('moon')[0].style.boxShadow = `inset ${stylePosition}px 0px rgba(0, 0, 0, 0.25), inset ${stylePosition}px 0px 1px 1px rgba(0, 0, 0, 0.7)`
 }
 
 const onInputChange = () => {
@@ -70,7 +69,7 @@ const setPhaseName = (numberOfDays) => {
 }
 
 const setDaysElement = (numberOfDays) => {
-    document.getElementsByClassName('campaign-days')[0].innerHTML = `${numberOfDays}`
+    document.getElementsByClassName('campaign-days')[0].innerHTML = `Day: ${numberOfDays}`
 }
 
 const updateMoon = (days) => {
