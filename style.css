@@ -71,6 +71,30 @@ button {
   align-items: center;
 }
 
+
+@media only screen and (max-height: 820px) {
+  .moon {
+    background-color: #222;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-image: url('./assets/moon.png');
+    background-size: contain;
+  }
+}
+
+
+@media only screen and (max-height: 563px) {
+  .moon {
+    background-color: #222;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('./assets/moon.png');
+    background-size: contain;
+  }
+}
+
 #myVideo {
   position: absolute;
   right: 0;
