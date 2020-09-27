@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/moon.mp4" type="video/mp4">
+      </video>
+    <div class="moon-container">
+        <h1 class="title"> Moon Tracker</h1>
+        <div class="moon"></div>
+        <div class="moon-phase-name-container">
+            <div class="phase-name">
+            </div>
+            <div class="campaign-days">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="minus-button button" onclick="onNegativeButtonPress()">-</button>
+            <input class="days-input input" type="number" min="0">
+            <button class="add-button button" onclick="onPositiveButtonPress()">+</button>
+        </div>
+    <div>
+</body>
+</html>

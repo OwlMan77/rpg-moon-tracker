@@ -1,0 +1,73 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Expletus Sans', cursive;
+  color: rgba(247, 193, 35, 0.9);
+}
+
+.moon-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.moon {
+  background-color: #222;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.moon-container > .button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.moon-container > .title {
+  font-size: 55px;
+}
+
+.phase-name {
+  font-size: 45px;
+  text-align: center;
+}
+
+.campaign-days {
+  font-size: 35px;
+  text-align: center;
+}
+
+.days-input {
+  font-size: 30px;
+  text-align: center;
+  background: transparent;
+  color: rgba(247, 193, 35, 0.9);
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  color: rgba(247, 193, 35, 0.9);
+  font-size: 30px;
+}
+
+
+.moon-phase-name-container {
+  background-color: rgba(0, 0, 0, 0.32);
+  border-radius: 10px;
+  min-width: 360px;
+}
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1000;
+}
