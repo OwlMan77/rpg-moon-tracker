@@ -44,10 +44,20 @@ const getPhasePercentage = (numberOfDays) => {
 const setMoonStyle = (days) => {
     const percentage = getPhasePercentage(days);
 
+    let moonSize = 500;
+
+    if (window.innerHeight < 820) {
+        moonSize = 250;
+    }
+
+    if (window.innerHeight < 563) {
+        moonSize = 150
+    }
+
     let stylePosition;
 
     if (percentage < 60) {
-       stylePosition = `${(1 - (percentage / 62.5)) * -500}`
+       stylePosition = `${(1 - (percentage / 62.5)) * -moonSize}`
     }
 
     if (percentage === 60) {
@@ -55,7 +65,7 @@ const setMoonStyle = (days) => {
     }
     
     if (percentage > 60) {
-       stylePosition = `${500 - (1 - ((percentage - 62.5) /  37.5)) * 500}`
+       stylePosition = `${moonSize - (1 - ((percentage - 62.5) /  37.5)) * moonSize}`
     }
     document.getElementsByClassName('moon')[0].style.boxShadow = `inset ${stylePosition}px 0px rgba(0, 0, 0, 0.25), inset ${stylePosition}px 0px 1px 1px rgba(0, 0, 0, 0.7)`
 }
